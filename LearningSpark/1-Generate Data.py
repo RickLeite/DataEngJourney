@@ -16,7 +16,7 @@ if __name__ == "__main__":
     fieldnames = ['State', 'Color', 'Count']
 
     entries = int(sys.argv[1])
-    dataset_fn = "mnm_dataset.csv"
+    dataset_fn = "1-mnm_dataset.csv"
     dataset_folder = "data"
     dataset_path = os.path.join(dataset_folder, dataset_fn)
 

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "first_name": "John",
+        "last_name": "Doe",
+        "url": "https://tinyurl.com/john-doe",
+        "published_date": "2022-01-01",
+        "hits": 10000,
+        "campaigns": [
+            "google",
+            "twitter"
+        ]
+    },
+    {
+        "id": 2,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "url": "https://tinyurl.com/jane-doe",
+        "published_date": "2022-01-02",
+        "hits": 20000,
+        "campaigns": [
+            "google",
+            "facebook"
+        ]
+    },
+    {
+        "id": 3,
+        "first_name": "Bob",
+        "last_name": "Smith",
+        "url": "https://tinyurl.com/bob-smith",
+        "published_date": "2022-01-03",
+        "hits": 15000,
+        "campaigns": [
+            "twitter",
+            "linkedin"
+        ]
+    },
+    {
+        "id": 4,
+        "first_name": "Alice",
+        "last_name": "Johnson",
+        "url": "https://tinyurl.com/alice-johnson",
+        "published_date": "2022-01-04",
+        "hits": 12000,
+        "campaigns": [
+            "facebook"
+        ]
+    },
+    {
+        "id": 5,
+        "first_name": "Charlie",
+        "last_name": "Garcia",
+        "url": "https://tinyurl.com/charlie-garcia",
+        "published_date": "2022-01-05",
+        "hits": 18000,
+        "campaigns": [
+            "google",
+            "twitter",
+            "linkedin"
+        ]
+    }
+]

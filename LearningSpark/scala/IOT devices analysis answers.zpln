@@ -1,0 +1,491 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%spark\n\nimport org.apache.spark.sql.{Dataset, SparkSession}\nimport org.apache.spark.sql.Encoders",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:23-0300",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.{Dataset, SparkSession}\nimport org.apache.spark.sql.Encoders\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683905362839_995308314",
+      "id": "paragraph_1683905362839_995308314",
+      "dateCreated": "2023-05-12T12:29:22-0300",
+      "dateStarted": "2023-05-12T23:32:23-0300",
+      "dateFinished": "2023-05-12T23:32:24-0300",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:7135"
+    },
+    {
+      "text": "%spark\n\ncase class DeviceIoTData(\n                          device_id: Long,\n                          device_name: String,\n                          ip: String,\n                          cca2: String,\n                          cca3: String,\n                          cn: String,\n                          latitude: Double,\n                          longitude: Double,\n                          scale: String,\n                          temp: Long,\n                          humidity: Long,\n                          battery_level: Long,\n                          c02_level: Long,\n                          lcd: String,\n                          timestamp: Long\n                        )",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:24-0300",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class DeviceIoTData\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683905557914_2036427435",
+      "id": "paragraph_1683905557914_2036427435",
+      "dateCreated": "2023-05-12T12:32:37-0300",
+      "dateStarted": "2023-05-12T23:32:24-0300",
+      "dateFinished": "2023-05-12T23:32:24-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7136"
+    },
+    {
+      "text": "%spark\n\nspark.version",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:24-0300",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres86\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = 3.4.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683905576945_1979344468",
+      "id": "paragraph_1683905576945_1979344468",
+      "dateCreated": "2023-05-12T12:32:56-0300",
+      "dateStarted": "2023-05-12T23:32:24-0300",
+      "dateFinished": "2023-05-12T23:32:24-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7137"
+    },
+    {
+      "text": "%spark\n\nval deviceIoTDataEncoder = Encoders.product[DeviceIoTData]\nval ds: Dataset[DeviceIoTData] = spark.read\n        .json(\"/home/wedivv/Code/others/spark/LearningSpark/data/6-iot_devices.json\")\n        .as(deviceIoTDataEncoder)\n\nds.show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:24-0300",
+      "progress": 100,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+---------+----+----+-------------+---------+--------------------+--------+---------------+--------+------+---------+-------+----+-------------+\n|battery_level|c02_level|cca2|cca3|           cn|device_id|         device_name|humidity|             ip|latitude|   lcd|longitude|  scale|temp|    timestamp|\n+-------------+---------+----+----+-------------+---------+--------------------+--------+---------------+--------+------+---------+-------+----+-------------+\n|            8|      868|  US| USA|United States|        1|meter-gauge-1xbYRYcj|      51|   68.161.225.1|    38.0| green|    -97.0|Celsius|  34|1458444054093|\n|            7|     1473|  NO| NOR|       Norway|        2|   sensor-pad-2n2Pea|      70|  213.161.254.1|   62.47|   red|     6.15|Celsius|  11|1458444054119|\n|            2|     1556|  IT| ITA|        Italy|        3| device-mac-36TWSKiT|      44|      88.36.5.1|   42.83|   red|    12.83|Celsius|  19|1458444054120|\n|            6|     1080|  US| USA|United States|        4|   sensor-pad-4mzWkz|      32|  66.39.173.154|   44.06|yellow|  -121.32|Celsius|  28|1458444054121|\n|            4|      931|  PH| PHL|  Philippines|        5|therm-stick-5gimp...|      62|    203.82.41.9|   14.58| green|   120.97|Celsius|  25|1458444054122|\n|            3|     1210|  US| USA|United States|        6|sensor-pad-6al7RT...|      51| 204.116.105.67|   35.93|yellow|   -85.46|Celsius|  27|1458444054122|\n|            3|     1129|  CN| CHN|        China|        7|meter-gauge-7GeDoanM|      26|  220.173.179.1|   22.82|yellow|   108.32|Celsius|  18|1458444054123|\n|            0|     1536|  JP| JPN|        Japan|        8|sensor-pad-8xUD6p...|      35|  210.173.177.1|   35.69|   red|   139.69|Celsius|  27|1458444054123|\n|            3|      807|  JP| JPN|        Japan|        9| device-mac-9GcjZ2pw|      85|  118.23.68.227|   35.69| green|   139.69|Celsius|  13|1458444054124|\n|            7|     1470|  US| USA|United States|       10|sensor-pad-10Bsyw...|      56|208.109.163.218|   33.61|   red|  -111.89|Celsius|  26|1458444054125|\n|            3|     1544|  IT| ITA|        Italy|       11|meter-gauge-11dlM...|      85|  88.213.191.34|   42.83|   red|    12.83|Celsius|  16|1458444054125|\n|            0|     1260|  US| USA|United States|       12|sensor-pad-12Y2kIm0o|      92|    68.28.91.22|    38.0|yellow|    -97.0|Celsius|  12|1458444054126|\n|            6|     1007|  IN| IND|        India|       13|meter-gauge-13Gro...|      92| 59.144.114.250|    28.6|yellow|     77.2|Celsius|  13|1458444054127|\n|            1|     1346|  NO| NOR|       Norway|       14|sensor-pad-14QL93...|      90| 193.156.90.200|   59.95|yellow|    10.75|Celsius|  16|1458444054127|\n|            9|     1259|  US| USA|United States|       15|  device-mac-15se6mZ|      70|    67.185.72.1|   47.41|yellow|   -122.0|Celsius|  13|1458444054128|\n|            4|     1425|  US| USA|United States|       16|sensor-pad-16aXmI...|      53|   68.85.85.106|    38.0|   red|    -97.0|Celsius|  15|1458444054128|\n|            0|     1466|  US| USA|United States|       17|meter-gauge-17zb8...|      98|161.188.212.254|   39.95|   red|   -75.16|Celsius|  31|1458444054129|\n|            4|     1096|  CN| CHN|        China|       18|sensor-pad-18XULN9Xv|      25|  221.3.128.242|   25.04|yellow|   102.72|Celsius|  31|1458444054130|\n|            9|     1531|  US| USA|United States|       19|meter-gauge-19eg1...|      75| 64.124.180.215|    38.0|   red|    -97.0|Celsius|  29|1458444054130|\n|            7|     1155|  US| USA|United States|       20|sensor-pad-20gFNf...|      33|  66.153.162.66|   33.94|yellow|   -78.92|Celsius|  10|1458444054131|\n+-------------+---------+----+----+-------------+---------+--------------------+--------+---------------+--------+------+---------+-------+----+-------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mdeviceIoTDataEncoder\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Encoder[DeviceIoTData]\u001b[0m = class[device_id[0]: bigint, device_name[0]: string, ip[0]: string, cca2[0]: string, cca3[0]: string, cn[0]: string, latitude[0]: double, longitude[0]: double, scale[0]: string, temp[0]: bigint, humidity[0]: bigint, battery_level[0]: bigint, c02_level[0]: bigint, lcd[0]: string, timestamp[0]: bigint]\n\u001b[1m\u001b[34mds\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[DeviceIoTData]\u001b[0m = [battery_level: bigint, c02_level: bigint ... 13 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=86",
+              "$$hashKey": "object:8277"
+            },
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=87",
+              "$$hashKey": "object:8278"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683905636670_1149538715",
+      "id": "paragraph_1683905636670_1149538715",
+      "dateCreated": "2023-05-12T12:33:56-0300",
+      "dateStarted": "2023-05-12T23:32:24-0300",
+      "dateFinished": "2023-05-12T23:32:26-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7138"
+    },
+    {
+      "text": "%spark\nimport spark.implicits._",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:26-0300",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683905806165_655379733",
+      "id": "paragraph_1683905806165_655379733",
+      "dateCreated": "2023-05-12T12:36:46-0300",
+      "dateStarted": "2023-05-12T23:32:26-0300",
+      "dateFinished": "2023-05-12T23:32:27-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7139"
+    },
+    {
+      "title": "Detect failing devices with battery levels below a threshold",
+      "text": "%spark\n    (ds\n        .filter($\"battery_level\" === 0)\n        .select(\"battery_level\", \"temp\", \"device_name\", \"device_id\", \"humidity\", \"c02_level\")\n        .orderBy(desc(\"temp\"), desc(\"humidity\"), desc(\"c02_level\"))\n      ).show()\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:27-0300",
+      "progress": 0,
+      "config": {
+        "title": true,
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+----+--------------------+---------+--------+---------+\n|battery_level|temp|         device_name|device_id|humidity|c02_level|\n+-------------+----+--------------------+---------+--------+---------+\n|            0|  34|meter-gauge-11018...|   110189|      99|     1583|\n|            0|  34|sensor-pad-35090W...|    35090|      99|     1563|\n|            0|  34|device-mac-64593M...|    64593|      99|     1462|\n|            0|  34|meter-gauge-10919...|    10919|      99|     1415|\n|            0|  34|sensor-pad-167624...|   167624|      99|     1415|\n|            0|  34|device-mac-88185E...|    88185|      99|     1366|\n|            0|  34|sensor-pad-140262...|   140262|      99|     1354|\n|            0|  34|meter-gauge-14051...|   140519|      99|     1271|\n|            0|  34|meter-gauge-77201...|    77201|      99|     1166|\n|            0|  34|sensor-pad-134484...|   134484|      99|     1107|\n|            0|  34|sensor-pad-100360...|   100360|      99|     1102|\n|            0|  34|device-mac-159687...|   159687|      99|     1099|\n|            0|  34|sensor-pad-159648...|   159648|      99|     1041|\n|            0|  34|meter-gauge-84023...|    84023|      99|      977|\n|            0|  34|device-mac-53481e...|    53481|      99|      873|\n|            0|  34|meter-gauge-37609...|    37609|      99|      803|\n|            0|  34|sensor-pad-115420...|   115420|      98|     1553|\n|            0|  34|meter-gauge-29117...|    29117|      98|     1486|\n|            0|  34|sensor-pad-122844...|   122844|      98|     1438|\n|            0|  34|meter-gauge-66781...|    66781|      98|     1405|\n+-------------+----+--------------------+---------+--------+---------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=88",
+              "$$hashKey": "object:8342"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683906038976_1857205350",
+      "id": "paragraph_1683906038976_1857205350",
+      "dateCreated": "2023-05-12T12:40:38-0300",
+      "dateStarted": "2023-05-12T23:32:27-0300",
+      "dateFinished": "2023-05-12T23:32:28-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7140"
+    },
+    {
+      "title": "Identify offending countries with high levels of CO2 emissions",
+      "text": "%spark\n(   ds.select(\"*\")\n  .groupBy(\"cn\")\n  .agg(avg(\"c02_level\").alias(\"avg_c02_level\"))\n  .orderBy(desc(\"avg_c02_level\"))\n        ).show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:50-0300",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------------+------------------+\n|              cn|     avg_c02_level|\n+----------------+------------------+\n|           Gabon|            1523.0|\n|Falkland Islands|            1424.0|\n|          Monaco|            1421.5|\n|          Kosovo|            1389.0|\n|      San Marino|1379.6666666666667|\n|         Liberia|            1374.5|\n|           Syria|            1345.8|\n|      Mauritania|1344.4285714285713|\n|           Congo|          1333.375|\n|           Tonga|            1323.0|\n|      East Timor|            1310.0|\n|          Guinea|            1308.0|\n|        Botswana|1302.6666666666667|\n|           Haiti|1291.3333333333333|\n|            Laos|            1291.0|\n|        Maldives|1284.7272727272727|\n|    Sint Maarten|1282.2857142857142|\n|         Andorra|            1279.0|\n|         Lesotho|            1274.6|\n|      Mozambique|            1264.0|\n+----------------+------------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=89",
+              "$$hashKey": "object:8431"
+            },
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=90",
+              "$$hashKey": "object:8432"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683906015967_472902125",
+      "id": "paragraph_1683906015967_472902125",
+      "dateCreated": "2023-05-12T12:40:15-0300",
+      "dateStarted": "2023-05-12T23:32:50-0300",
+      "dateFinished": "2023-05-12T23:32:51-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7141"
+    },
+    {
+      "title": "Compute the min and max values for temperature, battery level, CO2, and humidity",
+      "text": "%spark\n\nds.agg(\n    max(\"temp\").alias(\"max_temp\"),\n    min(\"temp\").alias(\"min_temp\"),\n    max(\"battery_level\").alias(\"max_battery_level\"),\n    min(\"battery_level\").alias(\"min_battery_level\"),\n    max(\"c02_level\").alias(\"max_c02_level\"),\n    min(\"c02_level\").alias(\"min_c02_level\"),\n    max(\"humidity\").alias(\"max_humidity\"),\n    min(\"humidity\").alias(\"min_humidity\")\n).show()\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:53-0300",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+--------+-----------------+-----------------+-------------+-------------+------------+------------+\n|max_temp|min_temp|max_battery_level|min_battery_level|max_c02_level|min_c02_level|max_humidity|min_humidity|\n+--------+--------+-----------------+-----------------+-------------+-------------+------------+------------+\n|      34|      10|                9|                0|         1599|          800|          99|          25|\n+--------+--------+-----------------+-----------------+-------------+-------------+------------+------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=91",
+              "$$hashKey": "object:8490"
+            },
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=92",
+              "$$hashKey": "object:8491"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683906541339_2070556058",
+      "id": "paragraph_1683906541339_2070556058",
+      "dateCreated": "2023-05-12T12:49:01-0300",
+      "dateStarted": "2023-05-12T23:32:53-0300",
+      "dateFinished": "2023-05-12T23:32:54-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7142"
+    },
+    {
+      "title": "Sort and group by average temperature, CO2, humidity, and country",
+      "text": "%spark\n\n(   ds\n  .groupBy($\"cn\")\n  .agg(\n    round(avg($\"temp\"), 2).alias(\"average_temperature\"),\n    round(avg($\"c02_level\"), 2).alias(\"average_c02_level\"),\n    round(avg($\"humidity\"), 2).alias(\"average_humidity\")\n  )\n  .orderBy(\n    desc(\"average_temperature\"),\n    desc(\"average_c02_level\"),\n    desc(\"average_humidity\"),\n    asc(\"cn\")\n  )\n).show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-05-12T23:32:56-0300",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+-------------------+-----------------+----------------+\n|                  cn|average_temperature|average_c02_level|average_humidity|\n+--------------------+-------------------+-----------------+----------------+\n|            Anguilla|              31.14|          1165.14|           50.71|\n|           Greenland|               29.5|           1099.5|            56.5|\n|               Gabon|               28.0|           1523.0|            30.0|\n|             Vanuatu|               27.3|           1175.3|            64.0|\n|         Saint Lucia|               27.0|          1201.67|           61.83|\n|              Malawi|              26.67|           1137.0|           59.56|\n|        Turkmenistan|              26.67|           1093.0|            69.0|\n|                Iraq|              26.43|          1225.57|           62.43|\n|                Laos|              26.29|           1291.0|           60.86|\n|British Indian Oc...|               26.0|           1206.0|            65.0|\n|                Cuba|              25.87|          1222.53|           49.53|\n|               Haiti|              25.33|          1291.33|           64.58|\n|                Fiji|              25.09|          1193.73|           56.45|\n|            Dominica|              24.73|          1214.35|           70.46|\n|               Benin|              24.67|           1038.0|           65.67|\n|               Syria|               24.6|           1345.8|            57.8|\n|            Botswana|               24.5|          1302.67|           73.75|\n|          East Timor|              24.33|           1310.0|            59.0|\n|Northern Mariana ...|              24.33|          1164.11|           52.33|\n|             Bahamas|              24.28|          1177.39|           68.61|\n+--------------------+-------------------+-----------------+----------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=93",
+              "$$hashKey": "object:8546"
+            },
+            {
+              "jobUrl": "http://192.168.1.44:4040/jobs/job?id=94",
+              "$$hashKey": "object:8547"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1683944964776_2021084320",
+      "id": "paragraph_1683944964776_2021084320",
+      "dateCreated": "2023-05-12T23:29:24-0300",
+      "dateStarted": "2023-05-12T23:32:56-0300",
+      "dateFinished": "2023-05-12T23:32:57-0300",
+      "status": "FINISHED",
+      "$$hashKey": "object:7143"
+    }
+  ],
+  "name": "IOT devices analysis z",
+  "id": "2J1QWSS1B",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/IOT devices analysis z"
+}

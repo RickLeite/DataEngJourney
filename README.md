@@ -1,8 +1,23 @@
-# spark-general
+# DataEngJourney
 
-This repository contains practices from books and personal codes related to Apache Spark.
+Welcome to my DE journey through books.
+
+This repository contains code practices from books and some other personal codes.
  
- Learning Spark Lightning-Fast Data Analytics (Jules S. Damji, Brooke Wenig, Tathagata Das, Denny Lee). 
-<img src="https://github.com/RickLeite/spark-general-may2023/assets/58158274/819e1f87-db0f-4175-b818-992909634546" width="400">
- 
-The practices in the directory [*LearningSpark*](https://github.com/RickLeite/spark-general-may2023/tree/main/LearningSpark) are based on the concepts and examples provided in the book, but they aren't directly equals to the original code in the book as I constantly make my own changes.
+## Books
+
+
+ **Learning Spark Lightning-Fast Data Analytics** (Jules S. Damji, Brooke Wenig, Tathagata Das, Denny Lee). 
+ Practices in the directory [*LearningSpark*](https://github.com/RickLeite/spark-general-may2023/tree/main/LearningSpark)
+<img src="https://learning.oreilly.com/library/cover/9781492050032/550w/" width="400">
+
+
+ **Data Pipelines with Apache Airflow** (Bas P. Harenslak, Julian Rutger de Ruite)
+<img src="https://images.manning.com/book/8/5a32e4a-7cad-425d-b4ef-b2de74eba4bb/Harenslak-DPAA-HI.png" width="400">
+
+
+
+
+----
+**!!** the practices from books aren't directly identical to the original code in the book as I constantly make my own modifications.
+Because I always strive to use the latest version of tools and libraries, you could use this repository as reference. 

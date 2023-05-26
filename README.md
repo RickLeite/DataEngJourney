@@ -8,11 +8,14 @@ This repository contains code practices from books and some other personal codes
 
 
  **Learning Spark Lightning-Fast Data Analytics** (Jules S. Damji, Brooke Wenig, Tathagata Das, Denny Lee). 
- Practices in the directory [*LearningSpark*](https://github.com/RickLeite/spark-general-may2023/tree/main/LearningSpark)
+ Practices in the directory [*LearningSpark*](https://github.com/RickLeite/DataEngJourney/tree/main/spark/LearningSpark)
+
 <img src="https://learning.oreilly.com/library/cover/9781492050032/550w/" width="400">
 
 
- **Data Pipelines with Apache Airflow** (Bas P. Harenslak, Julian Rutger de Ruite)
+ **Data Pipelines with Apache Airflow** (Bas P. Harenslak, Julian Rutger de Ruite).
+  Practices in the directory [*DataPipe*](https://github.com/RickLeite/DataEngJourney/tree/main/airflow)
+ 
 <img src="https://images.manning.com/book/8/5a32e4a-7cad-425d-b4ef-b2de74eba4bb/Harenslak-DPAA-HI.png" width="400">
 
 

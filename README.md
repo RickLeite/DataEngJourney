@@ -14,7 +14,7 @@ This repository contains code practices from books and some other personal codes
 
 
  **Data Pipelines with Apache Airflow** (Bas P. Harenslak, Julian Rutger de Ruite).
-  Practices in the directory [*DataPipe*](https://github.com/RickLeite/DataEngJourney/tree/main/airflow)
+ Practices in the directory [*DataPipe*](https://github.com/RickLeite/DataEngJourney/tree/main/airflow)
  
 <img src="https://images.manning.com/book/8/5a32e4a-7cad-425d-b4ef-b2de74eba4bb/Harenslak-DPAA-HI.png" width="400">
 

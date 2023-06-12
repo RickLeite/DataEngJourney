@@ -2,17 +2,23 @@ from datetime import datetime, timezone
 from airflow.decorators import dag, task
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import BranchPythonOperator
-from airflow.models.baseoperator import chain
+import pendulum
+from airflow.exceptions import AirflowSkipException
+from airflow.operators.latest_only import LatestOnlyOperator
+
 
 ERP_SWITCH_DATE = datetime(2023, 6, 7, tzinfo=timezone.utc)
 
 
 @dag(
-    dag_id="umbrella_branching_erp",
-    schedule_interval=None,
-    start_date=datetime(2023, 4, 4),
+    dag_id="latest_only_Operator",
+    schedule_interval="@yearly",
+    start_date=datetime(2017, 4, 4),
+    end_date=datetime(2037, 6, 7),
 )
 def task_flow():
+    latest_only = LatestOnlyOperator(task_id="latest_only")
+
     @task
     def fetch_sales_old():
         pass
@@ -67,9 +73,7 @@ def task_flow():
         print("Training model")
         pass
 
-    @task(
-        trigger_rule="none_failed",
-    )
+    @task
     def deploy_model():
         print("Deploying model")
         pass
@@ -82,11 +86,13 @@ def task_flow():
 
     pick_erp_system >> fetch_sales_new() >> clean_sales_new() >> join_branch
 
+    # we only run deploy_model() if lastest_only() succeeds
+
     (
         [start >> fetch_weather() >> clean_weather(), join_branch]
         >> join_data()
         >> train_model()
-        >> deploy_model()
+        >> [latest_only >> deploy_model()]
     )
 
 

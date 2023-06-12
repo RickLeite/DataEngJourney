@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import uuid
 from airflow.decorators import dag, task
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import BranchPythonOperator
@@ -8,7 +9,7 @@ ERP_SWITCH_DATE = datetime(2023, 6, 7, tzinfo=timezone.utc)
 
 
 @dag(
-    dag_id="branching_erp",
+    dag_id="xcom",
     schedule_interval=None,
     start_date=datetime(2023, 4, 4),
 )
@@ -61,15 +62,23 @@ def task_flow():
         pass
 
     @task
-    def train_model():
-        print("Training model")
+    def train_model(**context):
+        model_id = str(uuid.uuid4())
+        context["task_instance"].xcom_push(key="model_id", value=model_id)
+
+        print(f"Training model {model_id}")
+
         pass
 
     @task(
         trigger_rule="none_failed",
     )
-    def deploy_model():
-        print("Deploying model")
+    def deploy_model(**context):
+        model_id = context["task_instance"].xcom_pull(
+            task_ids="train_model", key="model_id"
+        )
+        print(f"Deploying model {model_id}")
+
         pass
 
     start = EmptyOperator(task_id="start")
